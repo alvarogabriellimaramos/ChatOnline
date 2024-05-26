@@ -1,0 +1,84 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+body {
+    background-color: #f5e6f6;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    padding:10px;
+    border-radius: 5px;
+}
+.container .create__username {
+    display: flex;
+    gap: 5px;
+}
+.container .create__username input {
+    padding:10px;
+    outline: none;
+    font-size: 1em;
+    background-color: #ddfdf5;
+    border: none;
+    outline: 1px solid #9d9afa;
+}
+.container .create__username input:focus {
+    outline: 2px solid #9d9afa;
+}
+.container .create__username button {
+    border: none;
+    background-color: #9d9afa;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    color: white;
+}
+.send__messagem {
+    display: none;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.send__messagem input {
+    width: 100%;
+    padding:10px;
+    font-size: 1.1em;
+    background-color: #f5e6f6;
+    border: none;
+    outline: none;
+}
+.send__messagem input:focus {
+    outline: 1px solid #9d9afa;
+}
+
+.send__messagem button {
+    width: 40px;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #9d9afa;
+}
+
+.container .div__messagem > div{
+    margin-bottom: 30px;
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #f5e6f6;
+    padding:5px;
+}
+
+.div__messagem .username {
+    font-size: 14px;
+}
