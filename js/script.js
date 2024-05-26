@@ -8,7 +8,7 @@ const input__send = send__messagem.querySelector('input');
 
 const username = document.querySelector('.username');
 const div__messagem = document.querySelector(".div__messagem");
-
+const div__open = document.querySelector('.div__open')
 const ws = new WebSocket('https://star-notch-barberry.glitch.me');
 
 const ids = [];
@@ -25,7 +25,12 @@ const colors = [
 ];
 
 ws.addEventListener('message',function(event) {
+
     const message = JSON.parse(event.data);
+    if (message.title) {
+        console.log(message)
+        return;
+    }
     sessionStorage.id = message.id;
     const div = document.createElement("div");
     div.setAttribute('data-user-id', message.id);
@@ -66,7 +71,7 @@ create__username.addEventListener('submit',event => {
         alert('Digite um nome de usuario maior que 4 caracteres');
         return;
     };
-    
+
     create__username.style.display = 'none';
     send__messagem.style.display = 'flex';
 
@@ -77,7 +82,7 @@ create__username.addEventListener('submit',event => {
     div__messagem.style.display = 'block';
 
     localStorage.id = user.id;
-    container.style.width= '800px';
+    container.style.maxWidth = '800px';
     container.style.height = '100vh';
     container.style.borderRadius = '0';
 });
@@ -100,10 +105,11 @@ function CreateElement (input) {
     return div.outerHTML
 }
 
+
 send__messagem.addEventListener('submit',event => {
     event.preventDefault();
     if (ws.readyState === WebSocket.OPEN) {
-        
+
         const message = {
             id : user.id,
             username: user.username,
@@ -115,3 +121,4 @@ send__messagem.addEventListener('submit',event => {
     }
 
 });
+

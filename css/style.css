@@ -11,7 +11,6 @@ body {
     display:flex;
     align-items: center;
     justify-content: center;
-    min-width: 400px;
 }
 .container {
     display: flex;
@@ -20,6 +19,10 @@ body {
     background-color: white;
     padding:10px;
     border-radius: 5px;
+}
+.div__open {
+    text-align: center;
+    margin-bottom: 10px;
 }
 .container .create__username {
     display: flex;
