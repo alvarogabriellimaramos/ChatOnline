@@ -62,6 +62,10 @@ function RandomColor(colors) {
 }
 create__username.addEventListener('submit',event => {
     event.preventDefault();
+    if (input__username.length < 4) {
+        alert('Digite um nome de usuario maior que 4 caracteres');
+        return;
+    };
     
     create__username.style.display = 'none';
     send__messagem.style.display = 'flex';
